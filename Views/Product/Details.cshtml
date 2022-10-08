@@ -1,0 +1,53 @@
+﻿@model Assignment_12_1.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_LayoutNew";
+}
+
+<h1>Details</h1>
+
+<div>
+    
+    <h4>Product</h4>
+    <font color="white">
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+    <div style="padding: 10px;">
+        @if(Model.ImageName != " ")
+        {
+            <img src="~/image/@Model.ImageName" height="200" width="200"/>
+        }
+    </div>
+    </font>
+</div>
+<div>
+    @Html.ActionLink("Test Link", "Index", "Home")
+    @Html.ActionLink("Edit", "Edit", new {id = Model.Id }) |
+    <a asp-action="Index" asp-controller="Product">Back to List</a>
+</div>
